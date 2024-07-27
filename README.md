@@ -20,6 +20,7 @@ The website consists of several sections:
 - **About:** A section to share the story and purpose of the website.
 - **Contact:** A form for users to send messages or inquiries.
 <br>
+
 ### Navigation
 
 - Use the navigation bar to jump to different sections of the website.
