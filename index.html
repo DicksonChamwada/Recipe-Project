@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="scr/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <style>
+      .section {
+        padding: 4rem 0;
+      }
+      .bg-primary {
+        background-color: #091729;
+      }
+      .text-primary {
+        color: #091729;
+      }
+      .text-secondary {
+        color: #1E90FF;
+      }
+      .hover\:bg-secondary:hover {
+        background-color: #1E90FF;
+      }
+      .hover\:text-secondary:hover {
+        color: #1E90FF;
+      }
+    </style>
+  </head>
+  
+<nav class="bg-blue-950 shadow-lg" x-data="{ open: false }">
+  <div class="container mx-auto p-4 flex justify-between items-center">
+    <div class="font-bold text-primary text-2xl">Chamwada's Tasty Table</div>
+    <button class="text-white focus:outline-none lg:hidden" @click="open = !open">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+    <div :class="{'block': open, 'hidden': !open}" class="w-full lg:flex lg:items-center lg:w-auto hidden">
+      <div class="flex flex-col lg:flex-row lg:ml-auto lg:space-x-4">
+        <a href="#home" class="text-gray-800 hover:text-secondary px-4 py-2 lg:py-0 text-2xl">Home</a>
+        <a href="#recipes" class="text-gray-800 hover:text-secondary px-4 py-2 lg:py-0 text-2xl">Recipes</a>
+        <a href="#about" class="text-gray-800 hover:text-secondary px-4 py-2 lg:py-0 text-2xl">About</a>
+        <a href="#contact" class="text-gray-800 hover:text-secondary px-4 py-2 lg:py-0 text-2xl">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-cover bg-center h-screen">
+    <div class="container mx-auto h-full flex justify-center items-center">
+      <div class="bg-blue bg-opacity-75 p-10 rounded-lg shadow-lg text-center">
+        <h1 class="text-4xl font-bold mb-4 text-primary">Welcome to Recipe World</h1>
+        <p class="text-lg mb-8 text-primary font-medium ">Discover and share your favorite recipes.</p>
+        <a href="#recipes" class="bg-primary text-white py-2 px-4 rounded-lg shadow-lg hover:bg-secondary">Explore Recipes</a>
+      </div>
+    </div>
+  </section>
+<!-- Featured Recipes -->
+<section id="recipes" class="section py-8">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center text-primary">Featured Recipes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <!-- Recipe Type 1-->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <img class="w-full h-56 object-cover" src="images/Swahili-food-4.jpg" alt="Chicken Biriyani">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-primary">Chicken Biriyani</h3>
+          <p class="text-gray-700 mb-4">How to prepare Chicken Biriyani</p>
+          <a href="#recipe-detail" class="text-secondary hover:underline">Read More</a>
+        </div>
+      </div>
+      <!-- Recipe Type 2 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="images/beef.webp" alt="beef stew" class="w-full h-48 object-cover">
+        <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2">Beef Stew</h2>
+            <p class="text-gray-700 mb-4">How to prepare Beef Stew.</p>
+            <a href="#recipe-detail-2" class="text-secondary hover:underline">Read More</a>
+        </div>
+      </div>
+      <!-- Recipe Type 3 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="images/Okra.jpg" alt="Recipe Image 2" class="w-full h-48 object-cover">
+        <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2">Slime Okra</h2>
+            <p class="text-gray-700 mb-4">How to prepare aasy toasted okra with zero slime.</p>
+            <a href="#recipe-detail-3" class="text-secondary hover:underline">Read More</a>
+        </div>
+      </div>
+      <!-- Recipe Type 4 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="images/fish.jpg" alt="Recipe Image 3" class="w-full h-48 object-cover">
+        <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2">Crispy Fried Fish</h2>
+            <p class="text-gray-700 mb-4">A brief description of the third type of recipe goes here.</p>
+            <a href="#recipe-detail-4" class="text-secondary hover:underline">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recipe Details For Chicken Biriyani-->
+<section id="recipe-detail" class="section py-8">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-3xl font-bold mb-4 text-primary">Chicken Biriyani preparation</h2>
+        <p class="text-gray-700 mb-4">Swahili biriyani definitely deserves a place in the culinary hall of fame. Here is the easy version</p>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Ingredients</h3>
+        <ul class="list-disc list-inside mb-4 text-gray-700">
+          <li>1 whole Chicken (Cut into 8 pieces)</li>
+          <li>5 whole tomatoes (chopped)</li>
+          <li>6 onions Sliced (Deep fried until golden and crispy)</li>
+          <li>3 tbsp tomato paste</li>
+          <li>1–2 tbsp Cumin (ground)</li>
+          <li>1 tbsp sugar</li>
+          <li>1/4 tsp cloves (ground)</li>
+          <li>1 tsp cardamom (ground)</li>
+          <li>1 tsp black pepper</li>
+          <li>1 tsp ginger (crushed)</li>
+          <li>1 tsp garlic (crushed)</li>
+          <li>1 1/2 cup water</li>
+          <li>3 potatoes (peeled; halved & deep fried)</li>
+          <li>3 tbsp Coriander (roughly chopped)</li>
+          <li>1 chilli (chopped)</li>
+          <li>1/2 cup Mala (or natural yoghurt)</li>
+        </ul>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Instructions</h3>
+        <ol class="list-decimal list-inside text-gray-700">
+          <li>In a thick bottomed pan, add 1 tbsp ghee followed by the tomato paste and fry it for 1 min on medium heat.</li>
+          <li>Add 1 tbsp cumin, 1/2 tsp ground cinnamon, 1 tsp ground cardamom, 1/2 tsp black pepper and a few cloves (4-5).</li>
+          <li>Cook the spices for 2 min then add the chopped tomatoes and cover the pan.</li>
+          <li>After 13 min, add the chicken, garlic, ginger, fresh chilly and, salt.</li>
+          <li>Cover and cook until chicken soften (about 15min)</li>
+          <li>Add 1/2 cup of mala or natural yoghurt cover and reduce the heat.</li>
+          <li>Deep fry your sliced onions if you haven’t and also fry the potatoes until a skin forms.</li>
+          <li>Add the deep friend and onions and potatoes to the biriyani. Cook until the potatoes are soft.</li>
+          <li>Serve with rice</li>
+        </ol>
+        <h3 class="font-bold text-1xl text-blue-600 underline mt-4">For more research or a more detailed explanation, use the link below:</h3>
+        <a class="text-red-500 underline" href="https://youtu.be/xsd_x4Wq_UU">https://youtu.be/xsd_x4Wq_UU</a>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- Recipe Details For Beef Stew-->
+<section id="recipe-detail-2" class="section py-8">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-3xl font-bold mb-4 text-primary">Beef Stew preparation</h2>
+        <p class="text-gray-700 mb-4">This beef steak is a very easy recipe to make. A tender cut of beef is sliced thin, then marinated with lemon juice and soy sauce for at least an hour.</p>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Ingredients</h3>
+        <ul class="list-disc list-inside mb-4 text-gray-700">
+          <li>4kgs Beef steak, sliced thin</li>
+          <li>1 lemon, juiced</li>
+          <li>3 tablespoons soy sauce</li>
+          <li>1 teaspoon white sugar</li>
+          <li>salt and pepper to taste</li>
+          <li>1 tablespoon cornstarch</li>
+          <li>1/4 tsp cloves (ground)</li>
+          <li>¼ cup vegetable oil</li>
+          <li>1 tsp black pepper</li>
+          <li>3 tablespoons olive oil</li>
+          <li>1 onion, chopped</li>
+          <li>2 cloves garlic, chopped</li>
+        </ul>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Instructions</h3>
+        <ol class="list-decimal list-inside text-gray-700">
+          <li>Place sliced beef in a large bowl. Whisk together lemon juice, soy sauce, sugar, salt, and pepper in a small bowl; pour over beef and toss to coat. Stir in cornstarch. Cover and refrigerate for 1 hour to overnight.</li>
+          <li>Heat vegetable oil in a large skillet over medium heat.</li>
+          <li>Remove beef slices from marinade, shaking to remove any excess liquid. Discard marinade.</li>
+          <li>Working in batches, fry beef slices in hot oil until they start to firm and are reddish-pink and juicy in the center, 2 to 4 minutes per side. Transfer beef slices to a serving platter.</li>
+          <li>Heat olive oil in a small skillet over medium heat. Cook and stir onion and garlic in hot oil until onion is golden brown, 5 to 7 minutes; spoon over beef slices.</li>
+        </ol>
+        <h3 class="font-bold text-1xl text-blue-600 underline mt-4">For more research or a more detailed explanation, use the link below:</h3>
+        <a class="text-red-500 underline" href="https://www.youtube.com/watch?v=IiOnMsOJCYI">https://www.youtube.com/watch?v=IiOnMsOJCYI</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Recipe Details for Slime-Okra-->
+<section id="recipe-detail-3" class="section py-8">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-3xl font-bold mb-4 text-primary">Slime-Okra preparation</h2>
+        <p class="text-gray-700 mb-4">Here is a recipe for what i like to call, ‘toasted okra’. I love adding onions, peppers and a touch of lemon to lift the whole dish..</p>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Ingredients</h3>
+        <ul class="list-disc list-inside mb-4 text-gray-700">
+          <li>25 okra</li>
+          <li>1 onion; cut in rings</li>
+          <li>1/2 capsicum; diced</li>
+          <li>2 tsp vegetable oil</li>
+          <li>1 1/2 tsp minced garlic</li>
+          <li>1 tsp black pepper</li>
+          <li>juice of 1/2 lemon</li>
+          <li>1 tsp salt</li>
+        </ul>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Instructions</h3>
+        <ol class="list-decimal list-inside text-gray-700">
+          <li>Cut the okra into small bite sizes.</li>
+          <li>Heat a thick bottomed pan until smoking hot and add the okra.</li>
+          <li>Keep mixing the okra so they don’t burn. Think of this as toasting, you want to toast the okra. You can add 1 tsp vegetable oil if you like.</li>
+          <li>Cook for 8 min then set the okra aside.</li>
+          <li>In the same pan, add the onion rings and capsicum. Again, you can add 1 tsp vegetable oil if you like. Cook for 1 min.</li>
+          <li>Add minced garlic followed by black pepper. Cook for 1 min then add the lemon juice and cook for a minute.</li>
+          <li>Remove from the flame and mix the okra and the onions together.</li>
+          <li>Add salt to taste</li>
+        </ol>
+        <h3 class="font-bold text-1xl text-blue-600 underline mt-4">For more research or a more detailed explanation, use the link below:</h3>
+        <a class="text-red-500 underline" href="https://www.youtube.com/watch?v=LBcGHFmi13E">https://www.youtube.com/watch?v=LBcGHFmi13EI</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Recipe Details for Crispy Fried Fish -->
+<section id="recipe-detail-4" class="section py-8">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-3xl font-bold mb-4 text-primary">Crispy Fried Fish preparation</h2>
+        <p class="text-gray-700 mb-4">Here is a recipe for what i like to call, Crispy Fried Fish..</p>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Ingredients</h3>
+        <ul class="list-disc list-inside mb-4 text-gray-700">
+          <li>2 small/medium fish</li>
+          <li>1 tsp salt</li>
+          <li>1 tsp chilli powder</li>
+          <li>3 onions</li>
+          <li>5 cloves garlic; crushed</li>
+          <li>1/2 inch ginger; crushed</li>
+          <li>1/2 cup Soy sauce</li>
+          <li>1 tbsp tamarind paste</li>
+          <li>1 tsp sugar</li>
+          <li>1/2 lemon; juiced</li>
+        </ul>
+        <h3 class="text-2xl font-bold mb-2 text-primary">Instructions</h3>
+        <ol class="list-decimal list-inside text-gray-700">
+          <li>Score both sides of the fish (this gives you extra crispy bits).</li>
+          <li>Add cooking oil into a large pan (i use a non stick pan).</li>
+          <li>Heat the oil and add your whole fish.</li>
+          <li>Fry for 4 min then gently turn the fish over.</li>
+          <li>Cook the other side for 4 min as well.</li>
+          <li>If you have a metal rack, place the fish on it to drain off any excess oil.</li>
+          <li>In a separate non stick pan, add the onions and sauté for 8 min on medium flame.</li>
+          <li>Add the ginger and garlic and cook for a further 2 min – You can add fresh chopped chilly at this point too</li>
+          <li>Next, add in the say sauce, tamarind paste and sugar. Cook for 5 min or until mixture starts to bubble away.</li>
+          <li>Add the lemon juice and taste it.</li>
+        </ol>
+        <h3 class="font-bold text-1xl text-blue-600 underline mt-4">For more research or a more detailed explanation, use the link below:</h3>
+        <a class="text-red-500 underline" href="https://www.youtube.com/watch?v=eRU22Y6_vLk">https://www.youtube.com/watch?v=eRU22Y6_vLk</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- About -->
+  <section id="about" class="section bg-gray-200">
+    <div class="container mx-auto">
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-3xl font-bold mb-4 text-primary">About Us</h2>
+        <p class="text-gray-700 mb-4">This is where you can write about the website and its purpose.</p>
+        <p class="text-gray-700">Share your story, your passion for cooking, and what inspired you to create this website.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container mx-auto">
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-3xl font-bold mb-4 text-primary">Contact Us</h2>
+        <form id="contactForm">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your name">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your email">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <div class="flex items-center justify-between">
+            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+              Send
+            </button>
+          </div>
+        </form>
+        <p id="formMessage" class="mt-4"></p>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 text-2xl ">
+    <div class="container mx-auto text-center">
+      <p class="mb-4">&copy; 2024 Recipe Website. All rights reserved.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="hover:text-secondary">Privacy Policy</a>
+        <a href="#" class="hover:text-secondary">Terms of Service</a>
+        <a href="#" class="hover:text-secondary">Contact</a>
+      </div>
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="#" class="hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-secondary"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-secondary"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="index.js"></script>
+</body>
+</html>
